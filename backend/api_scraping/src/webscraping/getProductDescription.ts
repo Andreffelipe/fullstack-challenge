@@ -1,5 +1,6 @@
 import { Page } from 'puppeteer';
-export async function getProductValues (page: Page, selector: string) {
+import { logger } from '../logs';
+export async function getProductValues(page: Page, selector: string) {
   try {
     const result = await page.evaluate((selector) => {
       const texts = []
@@ -8,10 +9,11 @@ export async function getProductValues (page: Page, selector: string) {
         let text = element.innerText as string
         texts.push(text)
       }
-      return texts.join(',')
+      return texts
     }, selector)
     return result
   } catch (error) {
+    logger.error(`GETPRODUCTVALUES : ${error}`, { color: 'red' })
     console.log(error)
   }
 }

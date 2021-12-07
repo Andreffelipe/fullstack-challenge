@@ -1,7 +1,8 @@
 import { Page } from 'puppeteer';
+import { logger } from '../logs';
 import { getProductValues } from './getProductDescription';
 
-export async function getProducts (page: Page) {
+export async function getProducts(page: Page) {
 
   try {
     const result = await page.evaluate(() => {
@@ -24,6 +25,7 @@ export async function getProducts (page: Page) {
     result.brands = await getProductValues(page, "#field_brands_value a")
     return result
   } catch (error) {
+    logger.error(`GETPRODUCTS : ${error}`, { color: 'red' })
     console.log(error)
     return {}
   }

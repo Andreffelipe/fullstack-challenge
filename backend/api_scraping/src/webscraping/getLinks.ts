@@ -1,4 +1,5 @@
 import { Page } from 'puppeteer';
+import { logger } from '../logs';
 
 export async function getLinks (page: Page) {
   try {
@@ -15,6 +16,7 @@ export async function getLinks (page: Page) {
     })
     return result;
   } catch (error) {
+    logger.error(`GETLINKS : ${error}`, { color: 'red' })
     console.log(error)
     return { links: [] }
   }

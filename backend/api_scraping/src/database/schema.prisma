@@ -16,8 +16,8 @@ model User {
   url          String
   product_name String
   quantity     String
-  categories   String
-  packaging    String
-  brands       String
+  categories   String[]
+  packaging    String[]
+  brands       String[]
   image_url    String
 }

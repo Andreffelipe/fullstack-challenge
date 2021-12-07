@@ -1,0 +1,1 @@
+{"color":"red","level":"error","message":"GETPRODUCTS : Error: Evaluation failed: TypeError: Cannot read properties of null (reading 'innerText')\n    at __puppeteer_evaluation_script__:8:33"}

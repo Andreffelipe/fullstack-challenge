@@ -4,7 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "puppeteer": "^10.4.0"
+    "@prisma/client": "^3.6.0",
+    "prisma": "^3.6.0",
+    "puppeteer": "^10.4.0",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@types/node": "^16.11.1",
@@ -12,5 +15,11 @@
     "ts-node": "^10.3.0",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.4.4"
+  },
+  "scripts": {
+    "dev": "npx ts-node src/index.ts"
+  },
+  "prisma": {
+    "schema": "./src/database/schema.prisma"
   }
 }
