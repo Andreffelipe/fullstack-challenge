@@ -27,17 +27,16 @@
       "@models/*": [
         "./src/models/*"
       ],
-      "@views/*": [
-        "./src/views/*"
+      "@interfaces/*": [
+        "./src/interfaces/*"
       ],
-      "@config/*": [
-        "./src/config/*"
+      "@repository/*": [
+        "./src/repository/*"
       ]
     }
   },
   "include": [
-    "src/**/*",
-    "test/**/*"
+    "src/**/*"
   ],
   "exclude": [
     "./dist"

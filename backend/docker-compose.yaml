@@ -1,0 +1,32 @@
+version: '3.3'
+
+services:
+  application:
+    container_name: "application"
+    build: './api_application'
+    volumes:
+      - .:/home/node/app
+      - ./node_modules:/home/node/app/node_modules
+    ports:
+      - 3000:3000
+    depends_on:
+      - "db"
+    command: "yarn dev"
+
+  scraping:
+    container_name: "scraping"
+    build: './api_scraping'
+    volumes:
+      - .:/home/node/app
+      - ./node_modules:/home/node/app/node_modules
+    depends_on:
+      - "db"
+    command: "yarn dev"
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: docker
+      POSTGRES_USER: docker
+      POSTGRES_DB: starwars

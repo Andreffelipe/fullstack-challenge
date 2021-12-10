@@ -1,1 +1,5 @@
-{"timeToRequest":86400000,"url":"https://world.openfoodfacts.org/","page":4}
+{
+  "timeToRequest": 86400000,
+  "url": "https://world.openfoodfacts.org/",
+  "page": 1
+}

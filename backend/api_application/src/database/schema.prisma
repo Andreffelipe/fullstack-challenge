@@ -7,17 +7,22 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model User {
-  id           Int      @id @default(autoincrement())
+enum Status {
+  draft
+  imported
+}
+
+model Product {
+  id           String   @id @default(uuid())
   code         Int      @unique
   barcode      String
-  status       String   @default("imported")
+  status       Status   @default(imported)
   imported_at  DateTime @default(now())
   url          String
   product_name String
   quantity     String
-  categories   String
-  packaging    String
-  brands       String
+  categories   String[]
+  packaging    String[]
+  brands       String[]
   image_url    String
 }

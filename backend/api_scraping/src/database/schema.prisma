@@ -7,7 +7,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model User {
+model Product {
   id           Int      @id @default(autoincrement())
   code         Int      @unique
   barcode      String
