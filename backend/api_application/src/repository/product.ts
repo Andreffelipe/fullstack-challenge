@@ -15,8 +15,22 @@ export class ProductRepository implements IProduct {
   async findMany(page: number): Promise<Product[]> {
     if (page != 0) page = page * 9;
     const products = await prisma.product.findMany({
+      take: 9,
       skip: page,
-      take: 9
+      select: {
+        id: true,
+        code: true,
+        barcode: true,
+        status: true,
+        imported_at: true,
+        url: true,
+        product_name: true,
+        quantity: true,
+        categories: true,
+        packaging: true,
+        brands: true,
+        image_url: true,
+      }
     });
     return products;
   }

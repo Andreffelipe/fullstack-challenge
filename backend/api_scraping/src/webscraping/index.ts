@@ -24,7 +24,6 @@ const webscraping = async (): Promise<Product[] | Error> => {
     for await (let link of result.links) {
       await page.goto(link)
       let product = await getProducts(page)
-      console.log(product)
       products.push(new Product({
         code: product.code,
         barcode: product.barcode,

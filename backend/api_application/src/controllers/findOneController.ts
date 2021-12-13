@@ -1,5 +1,5 @@
 import { Response, Request } from 'express';
-import { findOneService } from 'src/dependence';
+import { findOneService } from '../dependence';
 
 export class FindOneController {
   async handler(request: Request, response: Response) {

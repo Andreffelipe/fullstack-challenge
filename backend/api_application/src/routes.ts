@@ -7,7 +7,7 @@ router.get('/', (request: Request, response: Response) => {
   return response.status(200).json({ message: 'Fullstack Challenge 2021' });
 });
 
-router.get('/products/:code', (request: Request, response: Response) => {
+router.get('/product/:code', (request: Request, response: Response) => {
   return findOneController.handler(request, response);
 });
 

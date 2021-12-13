@@ -1,5 +1,5 @@
 import { Response, Request } from 'express';
-import { findManyService } from 'src/dependence';
+import { findManyService } from '../dependence';
 
 export class FindManyController {
   async handler(request: Request, response: Response) {
